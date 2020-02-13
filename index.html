@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Assignment1 - Photo Album Web Application</h1>
+    <br />
+    <h2>Add Photo To Gallery</h2>
+    <br>
+    <h2>
+        <table>
+            <tr>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="gallery.php">Gallery</a></td>
+
+            </tr>
+        </table>
+    </h2>
+
+    <script type='text/javascript'>
+        function validateForm() {
+        var v1 = document.forms["photoInformation"]["photo_name"].value;
+        var v2 = document.forms["photoInformation"]["date_taken"].value;
+        var v3 = document.forms["photoInformation"]["photographer"].value;
+        var v4 = document.forms["photoInformation"]["location"].value;
+        var v5 = document.forms["photoInformation"]["fileToUpload"].value;
+        if (v1 == "" || v1 == null || v2 == "" || v2 == null|| v3 == "" || v3 == null|| v4 == "" || v4 == null|| v5 == "" || v5 == null) {
+            alert("Information must be filled out");
+            return false;
+        }
+    }
+    </script>
+
+    <form name = "photoInformation" action="gallery.php" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Photo Name:</th>
+                <th><input type="text" name="photo_name"></th>
+            </tr>
+            <tr>
+                <th>Date Taken:</th>
+                <th><input type="text" name="date_taken"></th>
+            </tr>
+            <tr>
+                <th>Photographer:</th>
+                <th><input type="text" name="photographer"></th>
+            </tr>
+            <tr>
+                <th>Location:</th>
+                <th><input type="text" name="location"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input type="file" name="fileToUpload" value="Select File"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input type="submit" name="submit" value="Submit"></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
