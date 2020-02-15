@@ -1,6 +1,7 @@
 <?php
 //error_reporting(NULL);
 
+// class for storing information temporally
 class imageInfor{ 
 	public $f_path = NULL;
 	public $p_name = NULL;
@@ -8,12 +9,14 @@ class imageInfor{
 	public $p_grapher = NULL;
 	public $location_name = NULL;
 }
-$target_path = "uploads/";
-$file_name = isset($_FILES['fileToUpload']['tmp_name']) ? $_FILES['fileToUpload']['tmp_name'] : '';
-$target_file = $target_path.basename($file_name);
- 
+
 // Store image in /uploads
-move_uploaded_file($file_name, $target_file);
+$target_path = "uploads/";
+//for avoiding undefined index: fileToUpload
+$tmp_file_name = isset($_FILES['fileToUpload']['tmp_name']) ? $_FILES['fileToUpload']['tmp_name'] : '';
+$file_name = isset($_FILES['fileToUpload']['name']) ? $_FILES['fileToUpload']['name'] : '';
+$target_file = $target_path.basename($file_name);
+move_uploaded_file($tmp_file_name, $target_file);
     
 // For checking image name repeat purpose
 $readImageFile = fopen("photoInfo.txt", "a+") or die("Unable to open file!");
@@ -29,12 +32,12 @@ for($i=0; $i < sizeof($info);$i++){
 //default sorting method 
 if(!$repeatSubmit){
 	// Store information from form in variables
-	$photo_name = isset($_POST['photo_name']) ? $_POST['photo_name'] : '';//$_POST['photo_name'];
-	$date_taken = isset($_POST['date_taken']) ? $_POST['date_taken'] : '';//$_POST['date_taken'];
-	$photographer = isset($_POST['photographer']) ? $_POST['photographer'] : '';//$_POST['photographer'];
-	$location = isset($_POST['location']) ? $_POST['location'] : '';//$_POST['location'];
+	$photo_name = isset($_POST['photo_name']) ? $_POST['photo_name'] : '';
+	$date_taken = isset($_POST['date_taken']) ? $_POST['date_taken'] : '';
+	$photographer = isset($_POST['photographer']) ? $_POST['photographer'] : '';
+	$location = isset($_POST['location']) ? $_POST['location'] : '';
 }
-$sort_method = isset($_GET['selection']) ? $_GET['selection'] : '';//$_GET['selection'];
+$sort_method = isset($_GET['selection']) ? $_GET['selection'] : '';
 
 
 // Store variables in local txt file
@@ -50,14 +53,18 @@ if(!$repeatSubmit and $target_file!=$target_path){
 	$info = array_merge($info, $temp_array);
 }
 
+// store all images information in a class array for display purpose
 $total_num_of_images = (sizeof($info)-1) / 5;
 $images[] = new imageInfor();
+
 for($i=0; $i< $total_num_of_images; $i++){
+	$images[$i] = new stdClass;
 	$images[$i]->f_path = $info[$i*5];
 	$images[$i]->p_name = $info[$i*5+1];
 	$images[$i]->d_taken = $info[$i*5+2];
 	$images[$i]->p_grapher = $info[$i*5+3];
 	$images[$i]->location_name = $info[$i*5+4];
+	
 }
 
 ?>
@@ -106,19 +113,21 @@ for($i=0; $i< $total_num_of_images; $i++){
         <?php
 		//sorting array using usort($array, comparator_function)
 		// functions used for comparator scores of two object/students 
-		function sort_by_date($object1, $object2){
-			return $object1->d_taken > $object2->d_taken; 
-		}
+		
 		function sort_by_name($object1, $object2) { 
 			return $object1->p_name > $object2->p_name; 
 		} 
+		function sort_by_date($object1, $object2){
+			return $object1->d_taken > $object2->d_taken; 
+		}
 		function sort_by_photographer($object1, $object2) { 
 			return $object1->p_grapher > $object2->p_grapher;  
 		} 
 		function sort_by_location($object1, $object2) { 
 			return $object1->location_name > $object2->location_name; 
 		} 
-		$sort_function_select = "";
+		// set sort by name as default
+		$sort_function_select = "sort_by_name";
 		if($sort_method == "PhotoName"){
 			$sort_function_select = 'sort_by_name';
 		}
