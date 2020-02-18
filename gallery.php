@@ -71,9 +71,19 @@ for($i=0; $i< $total_num_of_images; $i++){
 
 <!DOCTYPE html>
 <html>
-<body>
-	<!-- refresh the page after first load -->
-	<script type='text/javascript'>
+	<head>
+	<title>Photo Album Web App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap's JavaScript plugin need to import jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- include all complied plugin -->
+	<script src="js/bootstrap.js"></script>
+	
+		<!-- refresh the page after first load -->
+		<script type='text/javascript'>
 		(function(){
 			if( window.localStorage ){
 				if( !localStorage.getItem( 'firstLoad' ) ){
@@ -85,11 +95,29 @@ for($i=0; $i< $total_num_of_images; $i++){
 			}
 		})();
 	</script>
+	</head>
 
-    <h1>View All Photos</h1><br>
+
+	<body>
+
+
+<div>
+        <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="gallery.php">Gallery</a>
+            </li>
+        </ul>
+    </div>
+
+	<div>
+	<h2>View All Photos</h2><br>
+	</div>
     <h2>
 		<form>
-			<table>
+			<table class="table">
 					<th>Sort By: </th>
 					<th>
 					<form method = "get" action = "gallery.php">
