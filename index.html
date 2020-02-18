@@ -10,9 +10,11 @@
     <!-- jQuery (Bootstrap's JavaScript plugin need to import jQuery) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- include all complied plugin -->
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
+
+
+
 
 <body>
 
@@ -38,6 +40,7 @@
 
 
     <div class="main">
+
         <script type='text/javascript'>
             function validateForm() {
                 var v1 = document.forms["photoInformation"]["photo_name"].value;
@@ -54,33 +57,66 @@
 
         <form name="photoInformation" action="gallery.php" onsubmit="return validateForm()" method="post"
             enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <th>Photo Name:</th>
-                    <th><input type="text" name="photo_name"></th>
-                </tr>
-                <tr>
-                    <th>Date Taken:</th>
-                    <th><input type="text" name="date_taken"></th>
-                </tr>
-                <tr>
-                    <th>Photographer:</th>
-                    <th><input type="text" name="photographer"></th>
-                </tr>
-                <tr>
-                    <th>Location:</th>
-                    <th><input type="text" name="location"></th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th><input type="file" accept=".png,.jpg,.jpeg,.gif" / name="fileToUpload" value="Select File"></th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th><input type="submit" name="submit" value="Submit"></th>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="photo_name">Photo Name:</label>
+                <textarea class="form-control" id="photo_name" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date_taken">Date Taken:</label>
+                <textarea class="form-control" id="date_taken" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photographer">Photographer:</label>
+                <textarea class="form-control" id="photographer" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <textarea class="form-control" id="location" rows="1"></textarea>
+            </div>
+            <label for="file">Upload Image:</label>
+            <div class="custom-file">
+                <input type="file" accept=".png,.jpg,.jpeg,.gif" / name="fileToUpload" value="Select FIle"
+                    class="custom-file-input" id="file">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </br></br></br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
+    </div>
+
+<!--
+<form name="photoInformation" action="gallery.php" onsubmit="return validateForm()" method="post"
+        enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Photo Name:</th>
+                <th><input type="text" name="photo_name"></th>
+            </tr>
+            <tr>
+                <th>Date Taken:</th>
+                <th><input type="text" name="date_taken"></th>
+            </tr>
+            <tr>
+                <th>Photographer:</th>
+                <th><input type="text" name="photographer"></th>
+            </tr>
+            <tr>
+                <th>Location:</th>
+                <th><input type="text" name="location"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input type="file" accept=".png,.jpg,.jpeg,.gif" / name="fileToUpload" value="Select File"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><input type="submit" name="submit" value="Submit"></th>
+            </tr>
+        </table>
+    </form>
+-->  
     </div>
 
 </body>
