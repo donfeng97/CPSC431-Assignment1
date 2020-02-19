@@ -136,7 +136,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 						</form>
 					</th>
 					<br>
-					<a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Upload</a>
+					<a href="index.html" class="btn btn-primary btn-lg " role="button" aria-pressed="true">Upload</a>
 					</tr>
 				</table>
 			</form>
