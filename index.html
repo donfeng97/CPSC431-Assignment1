@@ -68,13 +68,24 @@
                 <label for="location">Location:</label>
                 <input type="text" name="location" class="form-control" id="location" rows="1">
             </div>
-            <label for="Select File">Upload Image:</label>
+
+            <label for="file">Upload Image:</label>
             <div class="custom-file">
-                <input type="file" accept=".png,.jpg,.jpeg,.gif" / name="fileToUpload" value="Select File"
-                    class="custom-file-input" id="Select File">
-                <label class="custom-file-label" for="customFile">Choose file</label>
+                <input type="file" accept=".png,.jpg,.jpeg,.gif" / name="fileToUpload" value="file"
+                    class="custom-file-input" id="file"  >
+                <label class="custom-file-label" for="file">Choose file</label>
+                <script>
+                    $('#file').on('change',function(){
+                        //get the file name
+                        var fileName = $(this).val();
+                        //replace the "Choose a file" label
+                        $(this).next('.custom-file-label').html(fileName);
+                    })
+                </script>
             </div>
-            </br></br></br>
+            
+        
+            </br></br>
             <div class="form-group">
                 <input type="submit" name="submit" value="Submit" class="btn btn-primary">
             </div>
