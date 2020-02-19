@@ -49,7 +49,7 @@ if (!$repeatSubmit and $target_file != $target_path) {
 	fwrite($myfile, $writeString);
 	fclose($myfile);
 
-	$contents .= $target_file . ";" . $photo_name . ";" . $date_taken . ";" . $photographer . ";" . $location . ";";
+	$contents .= $target_file . ";" . $photo_namphpe . ";" . $date_taken . ";" . $photographer . ";" . $location . ";";
 	$temp_array = array($target_file, $photo_name, $date_taken, $photographer, $location);
 	$info = array_merge($info, $temp_array);
 }
@@ -107,7 +107,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 				<a class="nav-link" href="index.html">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link active" href="gallery.php">Gallery</a>
+				<a class="nav-link active" href="error_check.php">Gallery</a>
 			</li>
 		</ul>
 		<br><br>
@@ -136,7 +136,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 						</form>
 					</th>
 					<br>
-					<a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Up Load</a>
+					<a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Upload</a>
 					</tr>
 				</table>
 			</form>
