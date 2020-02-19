@@ -9563,10 +9563,15 @@ a.text-dark:hover, a.text-dark:focus {
 
 .header {
   text-align: center;
+  background-color: #fff;
+  border-radius: 20px;
+  width: 600px;
+  height: 200px;
   margin: auto;
   position: absolute;
   top: 0%;
-  left: 50%;
+  left: 45%;
+  transform: translate(-50%,-50%);
 }
 
 .main {
@@ -9576,9 +9581,10 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 20px;
   width: 300px;
   height: 350px;
-  margin: auto;
+  position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
