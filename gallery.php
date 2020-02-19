@@ -142,6 +142,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 				</table>
 			</form>
 		</h3>
+
 		<br>
 	</div>
 
@@ -188,7 +189,8 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 					echo  "</tr><tr>";
 				}
 				
-				echo "<td><img src= " . $images[$i]->f_path . ">";
+				echo '<td><img src= "' . $images[$i]->f_path .'"class="img-thumbnail"">';
+				echo '<img src="'. $path.$imgName .'" alt="icon">';
 				echo "<h5>" . "Photo Name: " . $images[$i]->p_name . "<br>" .
 					"Date Taken: " . $images[$i]->d_taken . "<br>" .
 					"Photographer: " . $images[$i]->p_grapher . "<br>" .
