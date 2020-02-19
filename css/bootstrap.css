@@ -9565,13 +9565,12 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: center;
   background-color: #fff;
   border-radius: 20px;
-  width: 600px;
-  height: 200px;
-  margin: auto;
+  width: 300px;
+  height: 300px;
   position: absolute;
-  top: 0%;
-  left: 45%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
 }
 
 .main {
