@@ -90,7 +90,6 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 				if (!localStorage.getItem('firstLoad')) {
 					localStorage['firstLoad'] = true;
 					window.location.reload();
-					images[$i] - > f_path
 				} else
 					localStorage.removeItem('firstLoad');
 			}
@@ -187,7 +186,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 					$row_count++;
 					echo  "</tr><tr>";
 				}
-
+				
 				echo "<td><img src= " . $images[$i]->f_path . ">";
 				echo "<h5>" . "Photo Name: " . $images[$i]->p_name . "<br>" .
 					"Date Taken: " . $images[$i]->d_taken . "<br>" .
