@@ -118,7 +118,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 	</div>
 
 
-	<div>
+	<div class="gallery">
 		<h3>
 			<form>
 				<table>

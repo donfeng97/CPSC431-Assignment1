@@ -9586,4 +9586,12 @@ a.text-dark:hover, a.text-dark:focus {
   transform: translate(-50%, -50%);
 }
 
+.gallery{
+  background-color: #fff;
+  width: 800px;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 20%;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
