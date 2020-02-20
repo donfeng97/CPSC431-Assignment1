@@ -118,7 +118,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 	</div>
 
 
-	<div class="gallery">
+	<div class="sortbar">
 		<h3>
 			<form>
 				<table>
@@ -135,10 +135,11 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 							<noscript><input type="submit" value="Submit"></noscript>
 						</form>
 					</th>
-					<br>
+					<th>&nbsp;</th>
+					<th>
 					<a href="index.html" class="btn btn-primary btn-lg 
 					" role="button" aria-pressed="true">Upload</a>
-					</tr>
+					</th>
 				</table>
 			</form>
 		</h3>
@@ -146,7 +147,7 @@ for ($i = 0; $i < $total_num_of_images; $i++) {
 		<br>
 	</div>
 
-	<table>
+	<table class="gallery">
 		<tr>
 			<?php
 			//sorting array using usort($array, comparator_function)

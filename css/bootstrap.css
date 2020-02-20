@@ -9586,11 +9586,25 @@ a.text-dark:hover, a.text-dark:focus {
   transform: translate(-50%, -50%);
 }
 
-.gallery{
+.sortbar {
+  text-align: center;
   background-color: #fff;
   width: 800px;
   position: absolute;
-  
+  top: 30%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery {
+  text-align: center;
+  background-color: #fff;
+  width: 800px;
+  height:350px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
